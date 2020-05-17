@@ -14,7 +14,7 @@ Note: Current settings are the following. To change the parameters, you will hav
 
 example calls:
 1.  `python3 ./CATechoPooler.py COMET384_Seq7_Echo_Calculations.xlsx "testing01"`
-2. `python3 ./CATechoPooler.py COMET384_Seq7_Echo_Calculations.xlsx "testing02" ~/test`
+2. `mkdir test; python3 ./CATechoPooler.py COMET384_Seq7_Echo_Calculations.xlsx "testing02" ~/test`
 
 ### Dependencies
 - `pip`
