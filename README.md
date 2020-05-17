@@ -16,7 +16,7 @@ example calls:
 1.  `python3 ./CATechoPooler.py COMET384_Seq7_Echo_Calculations.xlsx "testing01"`
 2. `python3 ./CATechoPooler.py COMET384_Seq7_Echo_Calculations.xlsx "testing02" ~/test`
 
-## Dependencies
+### Dependencies
 - `pip`
 - `pandas`
 - may suggest pip installing other items
