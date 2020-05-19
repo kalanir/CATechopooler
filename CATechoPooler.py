@@ -10,11 +10,23 @@ call using:
 """
 import pandas as pd
 import sys
-MAX_TRANSFER_VOL_BY_ECHO = 11 #cut-off between echo vs by-hand pooling
-MAX_DESTINATION_WELL_VOL = 15 #max volume destination plate well can hold
+MAX_TRANSFER_VOL_BY_ECHO = input("Enter the value (in uL) cut-off used between echo vs by-hand pooling. (press enter for default 11uL)")
+if MAX_TRANSFER_VOL_BY_ECHO == '':
+    MAX_TRANSFER_VOL_BY_ECHO = 11
+MAX_TRANSFER_VOL_BY_ECHO = int(MAX_TRANSFER_VOL_BY_ECHO)
+MAX_DESTINATION_WELL_VOL = input("Enter the max volume (in uL) that each well of the destination plate can hold. (press enter for default 15uL)")
+if MAX_DESTINATION_WELL_VOL == '':
+    MAX_DESTINATION_WELL_VOL = 11
+MAX_DESTINATION_WELL_VOL = int(MAX_DESTINATION_WELL_VOL)
+
+# MAX_TRANSFER_VOL_BY_ECHO = 11 #cut-off between echo vs by-hand pooling
+# MAX_DESTINATION_WELL_VOL = 15 #max volume destination plate well can hold
 
 
 def main():
+    if(len(sys.argv)) < 3:
+        print("Missing the minimum arguments! Check your call.")
+        return
     FILENAME = sys.argv[1]
     filebase = sys.argv[2]
     PATH = "./"
