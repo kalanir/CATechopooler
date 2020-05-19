@@ -19,9 +19,6 @@ if MAX_DESTINATION_WELL_VOL == '':
     MAX_DESTINATION_WELL_VOL = 11
 MAX_DESTINATION_WELL_VOL = int(MAX_DESTINATION_WELL_VOL)
 
-# MAX_TRANSFER_VOL_BY_ECHO = 11 #cut-off between echo vs by-hand pooling
-# MAX_DESTINATION_WELL_VOL = 15 #max volume destination plate well can hold
-
 
 def main():
     if(len(sys.argv)) < 3:
