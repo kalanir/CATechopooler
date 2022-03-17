@@ -56,6 +56,7 @@ def generateDestinationWells(FILENAME, filebase, PATH):
 
 def echoPoolDoc(DATAFRAME, filebase, PATH):
     echoSubset = DATAFRAME[DATAFRAME['byHand'] != True]
+    echoSubset = echoSubset.dropna(subset=["volume"])
     echoSubset.loc[:,'volume'] = echoSubset.loc[:,'volume'].astype(float)
     echoSubset.loc[:,"SOURCE WELL"] = echoSubset.loc[:,"Source Well"]
     echoSubset.loc[:,"TRANSFER VOLUME"] = echoSubset.loc[:,"volume"] * 1000
@@ -66,6 +67,7 @@ def echoPoolDoc(DATAFRAME, filebase, PATH):
 
 def byHandDoc(DATAFRAME, filebase, PATH):
     echoHand = DATAFRAME[DATAFRAME['byHand'] == True]
+    echoHand = echoHand.dropna(subset=["uL"])
     echoHand = echoHand[['Source Well', "uL"]]
     echoHand.loc[:,'uL'] = echoHand['uL'].astype(int)
     echoHand.to_csv(PATH + filebase + "_ByHandPoolingDoc.csv", index=False)
